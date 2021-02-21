@@ -1,5 +1,9 @@
 
 import 'package:flutter/material.dart';
+import 'package:sciencecalculator/ui/ Binary.dart';
+import 'package:sciencecalculator/ui/Octal.dart';
+import 'package:sciencecalculator/ui/ Decimal.dart';
+import 'package:sciencecalculator/ui/ Hexadecimal.dart';
 
 void main() {
   runApp(MyApp());
@@ -24,10 +28,10 @@ class _MyHomePageState extends State<MyHomePage> {
   int pageIndex = 0;
 
   static List<Widget> pageList=[
-    Text('index 0'),
-    Text('index 1'),
-    Text('index 2'),
-    Text('index 3')
+    binary(),
+    octal(),
+    decimal(),
+    hexadecimal()
   ];
 
   void onItemTapped(int index){

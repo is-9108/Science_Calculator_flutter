@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Result.dart';
 
 
 class binary extends StatefulWidget{
@@ -23,7 +24,9 @@ class _binaryState extends State<binary>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  _result = 0;
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => result()),
+                  );
                 });
               },
             ),

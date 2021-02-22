@@ -14,7 +14,7 @@ class _hexadecimalState extends State<hexadecimal>{
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text('$_result'),
+        Text('$_result',style: TextStyle(fontSize: 30)),
         Center(
           child: RaisedButton(
             child: Text('変換'),

@@ -14,7 +14,7 @@ class _octalState extends State<octal>{
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text('$_result'),
+        Text('$_result',style: TextStyle(fontSize: 30)),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

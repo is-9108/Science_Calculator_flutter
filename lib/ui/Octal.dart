@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'Result.dart';
 
 class octal extends StatefulWidget{
   _octalState createState() => _octalState();
@@ -23,7 +23,9 @@ class _octalState extends State<octal>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  _result = 0;
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => result()),
+                  );
                 });
               },
             ),

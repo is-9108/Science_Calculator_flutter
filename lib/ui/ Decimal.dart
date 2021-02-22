@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'Result.dart';
 
 class decimal extends StatefulWidget{
   _decimalState createState() => _decimalState();
@@ -23,7 +23,9 @@ class _decimalState extends State<decimal>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  _result = 0;
+                  Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => result()),
+                  );
                 });
               },
             ),

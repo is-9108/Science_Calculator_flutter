@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'Result.dart';
 
 class hexadecimal extends StatefulWidget{
   _hexadecimalState createState() => _hexadecimalState();
@@ -21,7 +21,9 @@ class _hexadecimalState extends State<hexadecimal>{
             color: Colors.blue,
             onPressed: (){
               setState(() {
-                _result = 0;
+                Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => result()),
+                );
               });
             },
           )

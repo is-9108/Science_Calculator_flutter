@@ -51,19 +51,19 @@ class _MyHomePageState extends State<MyHomePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-              icon: Icon(Icons.looks_two_outlined),
+              icon: Icon(Icons.two_k),
             label: 'two'
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.add),
+            icon: Icon(Icons.eight_k),
             label: "eight"
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.add),
+              icon: Icon(Icons.ten_k),
             label: "ten"
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.add),
+            icon: Icon(Icons.sixteen_mp),
             label: 'sixteen'
           )
         ],

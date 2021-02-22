@@ -31,12 +31,13 @@ class _resultState extends State<result>{
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('2進数',style: TextStyle(fontSize: 40)),
-            Text('0',style: TextStyle(fontSize: 40)),
+            Text(binaryResult,style: TextStyle(fontSize: 40)),
             Text('8進数',style: TextStyle(fontSize: 40)),
-            Text('0',style: TextStyle(fontSize: 40)),
+            Text(octalResult,style: TextStyle(fontSize: 40)),
             Text('10進数',style: TextStyle(fontSize: 40)),
-            Text('0',style: TextStyle(fontSize: 40)),
-            Text('16進数',style: TextStyle(fontSize: 40))
+            Text(decimalResult,style: TextStyle(fontSize: 40)),
+            Text('16進数',style: TextStyle(fontSize: 40)),
+            Text(hexadecimalResult,style: TextStyle(fontSize: 40))
           ],
         )
       ),

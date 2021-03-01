@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Result.dart';
+import 'package:sciencecalculator/function/Calculator.dart';
 
 class decimal extends StatefulWidget{
   _decimalState createState() => _decimalState();
@@ -7,14 +8,18 @@ class decimal extends StatefulWidget{
 
 class _decimalState extends State<decimal>{
 
-  int _result = 0;
+  double _num1 = 0;
+  double _num2 = 0;
+  String _resultNumber = '0';
+  bool a = true;
+  calculator calc = new calculator();
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text('$_result',style: TextStyle(fontSize: 30)),
+        Text(_resultNumber,style: TextStyle(fontSize: 30)),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -34,7 +39,9 @@ class _decimalState extends State<decimal>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  _result = 0;
+                  _num1 = 0;
+                  _num2 = 0;
+                  _resultNumber = '0';
                 });
               },
             )
@@ -48,7 +55,17 @@ class _decimalState extends State<decimal>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  _result = 7;
+                  if(_resultNumber != '0'){
+                    if(a){
+                      _resultNumber += '7';
+                    }else{
+                      _resultNumber = '7';
+                      a = true;
+                    }
+                  }else{
+                    _resultNumber = '7';
+                  }
+                  _num2 = double.parse(_resultNumber);
                 });
               },
             ),
@@ -57,7 +74,17 @@ class _decimalState extends State<decimal>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  _result = 8;
+                  if(_resultNumber != '0'){
+                    if(a){
+                      _resultNumber += '8';
+                    }else{
+                      _resultNumber = '8';
+                      a = true;
+                    }
+                  }else{
+                    _resultNumber = '8';
+                  }
+                  _num2 = double.parse(_resultNumber);
                 });
               },
             ),
@@ -66,7 +93,17 @@ class _decimalState extends State<decimal>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  _result = 9;
+                  if(_resultNumber != '0'){
+                    if(a){
+                      _resultNumber += '9';
+                    }else{
+                      _resultNumber = '9';
+                      a = true;
+                    }
+                  }else{
+                    _resultNumber = '9';
+                  }
+                  _num2 = double.parse(_resultNumber);
                 });
               },
             ),
@@ -74,7 +111,9 @@ class _decimalState extends State<decimal>{
               child: Text('÷'),
               color: Colors.blue,
               onPressed: (){
-                print('div');
+                _num1 = calc.div(_num1, _num2);
+                _resultNumber = _num1.toString();
+                a = false;
               },
             )
           ],
@@ -87,7 +126,17 @@ class _decimalState extends State<decimal>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  _result = 4;
+                  if(_resultNumber != '0'){
+                    if(a){
+                      _resultNumber += '4';
+                    }else{
+                      _resultNumber = '4';
+                      a = true;
+                    }
+                  }else{
+                    _resultNumber = '4';
+                  }
+                  _num2 = double.parse(_resultNumber);
                 });
               },
             ),
@@ -96,7 +145,17 @@ class _decimalState extends State<decimal>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  _result = 5;
+                  if(_resultNumber != '0'){
+                    if(a){
+                      _resultNumber += '5';
+                    }else{
+                      _resultNumber = '5';
+                      a = true;
+                    }
+                  }else{
+                    _resultNumber = '5';
+                  }
+                  _num2 = double.parse(_resultNumber);
                 });
               },
             ),
@@ -105,7 +164,17 @@ class _decimalState extends State<decimal>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  _result = 6;
+                  if(_resultNumber != '0'){
+                    if(a){
+                      _resultNumber += '6';
+                    }else{
+                      _resultNumber = '6';
+                      a = true;
+                    }
+                  }else{
+                    _resultNumber = '6';
+                  }
+                  _num2 = double.parse(_resultNumber);
                 });
               },
             ),
@@ -113,7 +182,9 @@ class _decimalState extends State<decimal>{
               child: Text('×'),
               color: Colors.blue,
               onPressed: (){
-                print('mul');
+                _num1 = calc.mul(_num1, _num2);
+                _resultNumber = _num1.toString();
+                a = false;
               },
             )
           ],
@@ -126,7 +197,17 @@ class _decimalState extends State<decimal>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  _result = 1;
+                  if(_resultNumber != '0'){
+                    if(a){
+                      _resultNumber += '1';
+                    }else{
+                      _resultNumber = '1';
+                      a = true;
+                    }
+                  }else{
+                    _resultNumber = '1';
+                  }
+                  _num2 = double.parse(_resultNumber);
                 });
               },
             ),
@@ -135,7 +216,17 @@ class _decimalState extends State<decimal>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  _result = 2;
+                  if(_resultNumber != '0'){
+                    if(a){
+                      _resultNumber += '2';
+                    }else{
+                      _resultNumber = '2';
+                      a = true;
+                    }
+                  }else{
+                    _resultNumber = '2';
+                  }
+                  _num2 = double.parse(_resultNumber);
                 });
               },
             ),
@@ -144,7 +235,17 @@ class _decimalState extends State<decimal>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  _result = 3;
+                  if(_resultNumber != '0'){
+                    if(a){
+                      _resultNumber += '3';
+                    }else{
+                      _resultNumber = '3';
+                      a = true;
+                    }
+                  }else{
+                    _resultNumber = '3';
+                  }
+                  _num2 = double.parse(_resultNumber);
                 });
               },
             ),
@@ -152,7 +253,9 @@ class _decimalState extends State<decimal>{
               child: Text('-'),
               color: Colors.blue,
               onPressed: (){
-                print('sub');
+                _num1 = calc.sub(_num1, _num2);
+                _resultNumber = _num1.toString();
+                a = false;
               },
             )
           ],
@@ -165,7 +268,17 @@ class _decimalState extends State<decimal>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  _result = 0;
+                  if(_resultNumber != '0'){
+                    if(a){
+                      _resultNumber += '0';
+                    }else{
+                      _resultNumber = '0';
+                      a = true;
+                    }
+                  }else{
+                    _resultNumber = '0';
+                  }
+                  _num2 = double.parse(_resultNumber);
                 });
               },
             ),
@@ -180,7 +293,9 @@ class _decimalState extends State<decimal>{
               child: Text('+'),
               color: Colors.blue,
               onPressed: (){
-                print('add');
+                _num1 = calc.add(_num1, _num2);
+                _resultNumber = _num1.toString();
+                a = false;
               },
             ),
           ],

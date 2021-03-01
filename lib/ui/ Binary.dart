@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Result.dart';
-
+import 'package:sciencecalculator/function/Calculator.dart';
 
 class binary extends StatefulWidget{
   _binaryState createState() => _binaryState();
@@ -8,14 +8,18 @@ class binary extends StatefulWidget{
 
 class _binaryState extends State<binary>{
 
-  int _result = 0;
+  double _num1 = 0;
+  double _num2 = 0;
+  String _resultNumber = '0';
+  bool a = true;
+  calculator calc = new calculator();
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text('$_result',style: TextStyle(fontSize: 30)),
+        Text(_resultNumber,style: TextStyle(fontSize: 30)),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -35,7 +39,9 @@ class _binaryState extends State<binary>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  _result = 0;
+                  _num1 = 0;
+                  _num2 = 0;
+                  _resultNumber = '0';
                 });
               },
             )
@@ -49,7 +55,9 @@ class _binaryState extends State<binary>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  print('add');
+                  _num1 = calc.add(_num1, _num2);
+                  _resultNumber = _num1.toString();
+                  a = false;
                 });
               },
             ),
@@ -58,7 +66,9 @@ class _binaryState extends State<binary>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  print('sub');
+                  _num1 = calc.sub(_num1, _num2);
+                  _resultNumber = _num1.toString();
+                  a = false;
                 });
               },
             ),
@@ -67,7 +77,9 @@ class _binaryState extends State<binary>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  print('mul');
+                  _num1 = calc.mul(_num1, _num2);
+                  _resultNumber = _num1.toString();
+                  a = false;
                 });
               },
             ),
@@ -76,7 +88,9 @@ class _binaryState extends State<binary>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  print('div');
+                  _num1 = calc.div(_num1, _num2);
+                  _resultNumber = _num1.toString();
+                  a = false;
                 });
               },
             )
@@ -90,7 +104,17 @@ class _binaryState extends State<binary>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  _result = 0;
+                  if(_resultNumber != '0'){
+                    if(a){
+                      _resultNumber += '0';
+                    }else{
+                      _resultNumber = '0';
+                      a = true;
+                    }
+                  }else{
+                    _resultNumber = '0';
+                  }
+                  _num2 = double.parse(_resultNumber);
                 });
               },
             ),
@@ -99,7 +123,17 @@ class _binaryState extends State<binary>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  _result = 1;
+                  if(_resultNumber != '0'){
+                    if(a){
+                      _resultNumber += '1';
+                    }else{
+                      _resultNumber = '1';
+                      a = true;
+                    }
+                  }else{
+                    _resultNumber = '1';
+                  }
+                  _num2 = double.parse(_resultNumber);
                 });
               },
             ),

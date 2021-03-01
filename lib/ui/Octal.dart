@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Result.dart';
+import 'package:sciencecalculator/function/Calculator.dart';
 
 class octal extends StatefulWidget{
   _octalState createState() => _octalState();
@@ -7,14 +8,18 @@ class octal extends StatefulWidget{
 
 class _octalState extends State<octal>{
 
-  int _result = 0;
+  double _num1 = 0;
+  double _num2 = 0;
+  String _resultNumber = '0';
+  bool a = true;
+  calculator calc = new calculator();
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text('$_result',style: TextStyle(fontSize: 30)),
+        Text(_resultNumber,style: TextStyle(fontSize: 30)),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -34,7 +39,9 @@ class _octalState extends State<octal>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  _result = 0;
+                  _num1 = 0;
+                  _num2 = 0;
+                  _resultNumber = '0';
                 });
               },
             )
@@ -48,7 +55,17 @@ class _octalState extends State<octal>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  _result = 7;
+                  if(_resultNumber != '0'){
+                    if(a){
+                      _resultNumber += '7';
+                    }else{
+                      _resultNumber = '7';
+                      a = true;
+                    }
+                  }else{
+                    _resultNumber = '7';
+                  }
+                  _num2 = double.parse(_resultNumber);
                 });
               },
             ),
@@ -56,7 +73,9 @@ class _octalState extends State<octal>{
               child: Text('÷'),
               color: Colors.blue,
               onPressed: (){
-                print('div');
+                _num1 = calc.div(_num1, _num2);
+                _resultNumber = _num1.toString();
+                a = false;
               },
             )
           ],
@@ -69,7 +88,17 @@ class _octalState extends State<octal>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  _result = 4;
+                  if(_resultNumber != '0'){
+                    if(a){
+                      _resultNumber += '4';
+                    }else{
+                      _resultNumber = '4';
+                      a = true;
+                    }
+                  }else{
+                    _resultNumber = '4';
+                  }
+                  _num2 = double.parse(_resultNumber);
                 });
               },
             ),
@@ -78,7 +107,17 @@ class _octalState extends State<octal>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  _result = 5;
+                  if(_resultNumber != '0'){
+                    if(a){
+                      _resultNumber += '5';
+                    }else{
+                      _resultNumber = '5';
+                      a = true;
+                    }
+                  }else{
+                    _resultNumber = '5';
+                  }
+                  _num2 = double.parse(_resultNumber);
                 });
               },
             ),
@@ -87,7 +126,17 @@ class _octalState extends State<octal>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  _result = 6;
+                  if(_resultNumber != '0'){
+                    if(a){
+                      _resultNumber += '6';
+                    }else{
+                      _resultNumber = '6';
+                      a = true;
+                    }
+                  }else{
+                  _resultNumber = '6';
+                  }
+                  _num2 = double.parse(_resultNumber);
                 });
               },
             ),
@@ -96,7 +145,9 @@ class _octalState extends State<octal>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  print('mul');
+                  _num1 = calc.mul(_num1, _num2);
+                  _resultNumber = _num1.toString();
+                  a = false;
                 });
               },
             )
@@ -110,7 +161,17 @@ class _octalState extends State<octal>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  _result = 1;
+                  if(_resultNumber != '0'){
+                    if(a){
+                      _resultNumber += '1';
+                    }else{
+                      _resultNumber = '1';
+                      a = true;
+                    }
+                  }else{
+                    _resultNumber = '1';
+                  }
+                  _num2 = double.parse(_resultNumber);
                 });
               },
             ),
@@ -119,7 +180,17 @@ class _octalState extends State<octal>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  _result = 2;
+                  if(_resultNumber != '0'){
+                    if(a){
+                      _resultNumber += '2';
+                    }else{
+                      _resultNumber = '2';
+                      a = true;
+                    }
+                  }else{
+                    _resultNumber = '2';
+                  }
+                  _num2 = double.parse(_resultNumber);
                 });
               },
             ),
@@ -128,7 +199,17 @@ class _octalState extends State<octal>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  _result = 6;
+                  if(_resultNumber != '0'){
+                    if(a){
+                      _resultNumber += '3';
+                    }else{
+                      _resultNumber = '3';
+                      a = true;
+                    }
+                  }else{
+                    _resultNumber = '3';
+                  }
+                  _num2 = double.parse(_resultNumber);
                 });
               },
             ),
@@ -137,7 +218,9 @@ class _octalState extends State<octal>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  print('sub');
+                  _num1 = calc.sub(_num1, _num2);
+                  _resultNumber = _num1.toString();
+                  a = false;
                 });
               },
             )
@@ -151,7 +234,17 @@ class _octalState extends State<octal>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  _result = 0;
+                  if(_resultNumber != '0'){
+                    if(a){
+                      _resultNumber += '0';
+                    }else{
+                      _resultNumber = '0';
+                      a = true;
+                    }
+                  }else{
+                    _resultNumber = '0';
+                  }
+                  _num2 = double.parse(_resultNumber);
                 });
               },
             ),
@@ -169,7 +262,9 @@ class _octalState extends State<octal>{
               color: Colors.blue,
               onPressed: (){
                 setState(() {
-                  print('add');
+                  _num1 = calc.add(_num1, _num2);
+                  _resultNumber = _num1.toString();
+                  a = false;
                 });
               },
             )

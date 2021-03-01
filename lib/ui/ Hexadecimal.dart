@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Result.dart';
+import 'package:sciencecalculator/function/Calculator.dart';
 
 class hexadecimal extends StatefulWidget{
   _hexadecimalState createState() => _hexadecimalState();

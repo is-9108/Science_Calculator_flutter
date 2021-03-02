@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'Result.dart';
 import 'package:sciencecalculator/function/Calculator.dart';
+import 'dart:developer';
 
 class decimal extends StatefulWidget{
   _decimalState createState() => _decimalState();
@@ -10,8 +11,10 @@ class _decimalState extends State<decimal>{
 
   double _num1 = 0;
   double _num2 = 0;
+  double _num3 = 0;
   String _resultNumber = '0';
   bool a = true;
+  String ope = '';
   calculator calc = new calculator();
 
   @override
@@ -42,6 +45,7 @@ class _decimalState extends State<decimal>{
                   _num1 = 0;
                   _num2 = 0;
                   _resultNumber = '0';
+                  ope = '';
                 });
               },
             )
@@ -111,9 +115,34 @@ class _decimalState extends State<decimal>{
               child: Text('÷'),
               color: Colors.blue,
               onPressed: (){
-                _num1 = calc.div(_num1, _num2);
-                _resultNumber = _num1.toString();
-                a = false;
+                setState(() {
+                  if(_resultNumber != 0){
+                    _num2 = _num3;
+                    _num3 = double.parse(_resultNumber);
+                    log('$_num1 + $_num2 : $ope');
+                    switch(ope){
+                      case '':
+                        _num1 = calc.add(_num1, _num2);
+                        break;
+                      case 'add':
+                        _num1 = calc.add(_num1, _num2);
+                        break;
+                      case 'sub':
+                        _num1 = calc.sub(_num1, _num2);
+                        break;
+                      case 'mul':
+                        _num1 = calc.mul(_num1, _num2);
+                        break;
+                      case 'div':
+                        _num1 = calc.div(_num1, _num2);
+                        break;
+                    }
+                    // _resultNumber = _num1.toString();
+                    _resultNumber = '$_num1 $ope $_num2 $_num3';
+                    a = false;
+                    ope = 'div';
+                  }
+                });
               },
             )
           ],
@@ -182,9 +211,34 @@ class _decimalState extends State<decimal>{
               child: Text('×'),
               color: Colors.blue,
               onPressed: (){
-                _num1 = calc.mul(_num1, _num2);
-                _resultNumber = _num1.toString();
-                a = false;
+                setState(() {
+                  if(_resultNumber != 0){
+                    _num2 = _num3;
+                    _num3 = double.parse(_resultNumber);
+                    log('$_num1 + $_num2 : $ope');
+                    switch(ope){
+                      case '':
+                        _num1 = calc.add(_num1, _num2);
+                        break;
+                      case 'add':
+                        _num1 = calc.add(_num1, _num2);
+                        break;
+                      case 'sub':
+                        _num1 = calc.sub(_num1, _num2);
+                        break;
+                      case 'mul':
+                        _num1 = calc.mul(_num1, _num2);
+                        break;
+                      case 'div':
+                        _num1 = calc.div(_num1, _num2);
+                        break;
+                    }
+                    // _resultNumber = _num1.toString();
+                    _resultNumber = '$_num1 $ope $_num2 $_num3';
+                    a = false;
+                    ope = 'mul';
+                  }
+                });
               },
             )
           ],
@@ -253,9 +307,34 @@ class _decimalState extends State<decimal>{
               child: Text('-'),
               color: Colors.blue,
               onPressed: (){
-                _num1 = calc.sub(_num1, _num2);
-                _resultNumber = _num1.toString();
-                a = false;
+                setState(() {
+                  if(_resultNumber != 0){
+                    _num2 = _num3;
+                    _num3 = double.parse(_resultNumber);
+                    log('$_num1 + $_num2 : $ope');
+                    switch(ope){
+                      case '':
+                        _num1 = calc.add(_num1, _num2);
+                        break;
+                      case 'add':
+                        _num1 = calc.add(_num1, _num2);
+                        break;
+                      case 'sub':
+                        _num1 = calc.sub(_num1, _num2);
+                        break;
+                      case 'mul':
+                        _num1 = calc.mul(_num1, _num2);
+                        break;
+                      case 'div':
+                        _num1 = calc.div(_num1, _num2);
+                        break;
+                    }
+                    // _resultNumber = _num1.toString();
+                    _resultNumber = '$_num1 $ope $_num2 $_num3';
+                    a = false;
+                    ope = 'sub';
+                  }
+                });
               },
             )
           ],
@@ -286,16 +365,41 @@ class _decimalState extends State<decimal>{
               child: Text('='),
               color: Colors.blue,
               onPressed: (){
-                print('=');
+                log('=');
               },
             ),
             RaisedButton(
               child: Text('+'),
               color: Colors.blue,
               onPressed: (){
-                _num1 = calc.add(_num1, _num2);
-                _resultNumber = _num1.toString();
-                a = false;
+                setState(() {
+                  if(_resultNumber != 0){
+                    _num2 = _num3;
+                    _num3 = double.parse(_resultNumber);
+                    log('$_num1 + $_num2 : $ope');
+                    switch(ope){
+                      case '':
+                        _num1 = calc.add(_num1, _num2);
+                        break;
+                      case 'add':
+                        _num1 = calc.add(_num1, _num2);
+                        break;
+                      case 'sub':
+                        _num1 = calc.sub(_num1, _num2);
+                        break;
+                      case 'mul':
+                        _num1 = calc.mul(_num1, _num2);
+                        break;
+                      case 'div':
+                        _num1 = calc.div(_num1, _num2);
+                        break;
+                    }
+                    // _resultNumber = _num1.toString();
+                    _resultNumber = '$_num1 $ope $_num2 $_num3';
+                    a = false;
+                    ope = 'add';
+                  }
+                });
               },
             ),
           ],
